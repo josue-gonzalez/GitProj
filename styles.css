@@ -159,6 +159,93 @@ time {
   font-weight: 400;
 }
 
+.album-page {
+  display: block;
+  padding: 48px 24px;
+  color: #242321;
+  background: #f4f1ec;
+  font-family: system-ui, sans-serif;
+}
+
+.album-page main {
+  width: min(100%, 1100px);
+  min-height: 0;
+  display: block;
+  margin: auto;
+  padding: 0;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.album-page header {
+  margin-bottom: 28px;
+}
+
+.album-page .label {
+  margin: 0 0 8px;
+  color: #8b6950;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.album-page h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+
+.album-page .intro {
+  margin: 10px 0 0;
+  color: #716d67;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 20px;
+}
+
+.album {
+  overflow: hidden;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 5px 20px #31271912;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.album:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #31271920;
+}
+
+.album img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.album .details {
+  padding: 16px 18px 18px;
+}
+
+.album .details h2 {
+  margin: 0 0 5px;
+  font-size: 1.1rem;
+}
+
+.album .details p {
+  margin: 0;
+  color: #817c75;
+  font-size: 0.9rem;
+}
+
 @keyframes arrive {
   from {
     opacity: 0;
@@ -176,5 +263,15 @@ time {
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .album-page {
+    padding: 32px 16px;
+  }
+
+  .album-grid {
+    gap: 14px;
   }
 }
