@@ -1,0 +1,122 @@
+:root {
+  color-scheme: light;
+  --ink: #263b35;
+  --muted: #65746b;
+  --paper: #f3eadb;
+  --sun: #e8b66d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 12% 15%, #fff9e8 0, transparent 36%),
+    radial-gradient(ellipse at 88% 85%, #d8e2ce 0, transparent 34%),
+    var(--paper);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}
+
+main {
+  width: min(100%, 680px);
+  min-height: 390px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  padding: clamp(36px, 8vw, 78px) 24px;
+  text-align: center;
+  border: 1px solid rgb(38 59 53 / 12%);
+  background: rgb(255 255 255 / 30%);
+  box-shadow: 0 24px 70px rgb(58 69 53 / 9%);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 34px;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.sun-mark {
+  width: 54px;
+  aspect-ratio: 1;
+  margin-bottom: 28px;
+  border: 1px solid rgb(38 59 53 / 26%);
+  border-radius: 50%;
+  background: var(--sun);
+  box-shadow: 0 0 0 9px rgb(232 182 109 / 17%);
+  animation: arrive 700ms ease-out both;
+}
+
+h1 {
+  margin: 0;
+  font-family:
+    Iowan Old Style,
+    "Palatino Linotype",
+    "Book Antiqua",
+    Georgia,
+    serif;
+  font-size: clamp(2.5rem, 8vw, 5.25rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: 0;
+  animation: arrive 700ms 100ms ease-out both;
+}
+
+time {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 2.25rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  animation: arrive 700ms 180ms ease-out both;
+}
+
+.page-copy {
+  max-width: 460px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
